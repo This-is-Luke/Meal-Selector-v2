@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Meal Selector</title>
+</head>
+
+<body>
+    <div id="randomMealSection">
+
+    <h1>meal selector</h1>
+    <button id="randomMeal">Random Meal</button>
+    <h2>Breakfast</h2>
+    <div id="breakfastOption"></div>
+    <h2>Lunch</h2>
+    <div id="lunchOption"></div>
+    <h2>Dinner</h2>
+    <div id="dinnerOption"></div>
+    </div>
+    <form id="intakeForm">
+        <label for="mealName">Meal Name</label>
+        <input type="text" id="mealName" name="mealName" required>
+      
+        <label for="mealIngredients">Meal Ingredients</label>
+        <textarea id="mealIngredients" name="mealIngredients" required></textarea>
+      
+        <label for="mealRecipe">Meal Recipe</label>
+        <textarea id="mealRecipe" name="mealRecipe" required></textarea>
+      
+        <label for="mealCategory">Meal Category</label>
+        <select id="mealCategory" name="mealCategory" required>
+          <option id="mealCatagoryOption" value="">Select a category</option>
+          <option value="breakfast">breakfast</option>
+          <option value="lunch">lunch</option>
+          <option value="dinner">dinner</option>
+        </select>
+      
+        <button id="submitFormBtn" type="submit">Add Meal</button>
+      </form>
+
+    <ul id="mealList"></ul>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyA_HKZblEVsab0DSsXC-zBBeG85vkCy0UI",
+            authDomain: "mealsorterdb.firebaseapp.com",
+            databaseURL: "https://mealsorterdb-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "mealsorterdb",
+            storageBucket: "mealsorterdb.appspot.com",
+            messagingSenderId: "979856310386",
+            appId: "1:979856310386:web:71481e6e912953ce4e02eb"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        db.settings({ timestampsInSnapshots: true });
+    </script>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
