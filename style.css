@@ -1,7 +1,7 @@
 
 body {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center; /* centers items horizontally */
     font-family: sans-serif;
     font-size: calc(1rem + 0.5vw); /* sets font size based on viewport width */
@@ -17,13 +17,43 @@ body {
     align-items: center;
     max-width: 800px;
     width: 100%; /* sets width to fill available space */
-    height: 100%; /* sets height to fill available space */
+    height: auto; /* sets height to fill available space */
     margin: 0 auto;
     padding: 2rem;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+#randomMeal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+    max-width: 800px;
+    width: 100%; /* sets width to fill available space */
+    height: auto; /* sets height to fill available space */
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+#randomMeal:hover {
+    box-shadow: 0 0 30px rgba(33,33,33,.2);
+    transform: scale(1.2);
+    /* smooth transition */
+    transition: all 0.3s ease-in-out;
+}
+
+/* #randomMeal on leave hover glow and increase size 1.5x */
+
+
+
+
 h1 {
     text-align: center;
     margin: 2rem 0;
@@ -43,6 +73,18 @@ form {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+#breakfastOption, #lunchOption, #dinnerOption {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #breakfastOption, #lunchOption, #dinnerOption {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid black;
+  }
 
 #submitFormBtn {
     display: block;
@@ -64,6 +106,15 @@ form {
     align-items: center;
     
 }
+
+#mealList {
+    max-height: auto;
+    min-height: 400px;
+    overflow-y: scroll;
+    max-width: 800px;
+    margin: 2rem 0;
+    padding: 0;
+  }
 
 
 label {
@@ -161,6 +212,11 @@ ul li {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    width: 5rem;
+    max-height: 5rem; /* set the maximum width of the button */
+    white-space: nowrap; /* prevent the text from wrapping */
+    overflow: none; /* hide any text that exceeds the maximum width */
+    text-overflow: ellipsis; /* add an ellipsis (...) at the end of the text if it overflows */
 }
 
 /* center itmes vertically */

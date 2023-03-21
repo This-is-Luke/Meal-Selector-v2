@@ -15,11 +15,15 @@ function displayRandomMeal(category, element) {
     }
 
     // Select a random meal from the array
-    const randomMeal = meals[Math.floor(Math.random() * meals.length)].data().name;
+    const randomMeal = meals[Math.floor(Math.random() * meals.length)].data();
 
     // Display the random meal in the specified HTML element
     const htmlElement = document.getElementById(element);
-    htmlElement.textContent = randomMeal;
+    htmlElement.innerHTML = `
+      <h2>${randomMeal.name}</h2>
+      <p><strong>Ingredients:</strong> ${randomMeal.ingredients}</p>
+      <p><strong>Recipe:</strong> ${randomMeal.recipe}</p>
+    `;
   });
 }
 
@@ -59,11 +63,15 @@ function displayMeals() {
 
       // Create a remove button for each list item
       const removeButton = document.createElement("button");
-      removeButton.textContent = "Remove Item";
+      removeButton.textContent = "X";
       removeButton.classList.add("remove-button"); // add class to button
       removeButton.addEventListener("click", () => {
-        // Remove the item from Firestore collection
-        db.collection("mealsdb").doc(doc.id).delete();
+        // Display a confirmation dialog before deleting the item
+        const confirmDelete = confirm("Are you sure you want to delete this item?");
+        if (confirmDelete) {
+          // Remove the item from Firestore collection
+          db.collection("mealsdb").doc(doc.id).delete();
+        }
       });
 
       // Add the meal information and the remove button to the list item
