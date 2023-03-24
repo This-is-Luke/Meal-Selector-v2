@@ -1,10 +1,13 @@
+const randomMealButton = document.getElementById("randomMeal")
+
 function displayRandomMeal(category, element) 
   {
   // Get a reference to the meals collection in Firestore
   const mealsCollection = db.collection("mealsdb");
 
   // Query Firestore for meals in the specified category
-  mealsCollection.where("category", "==", category.toLowerCase()).get().then((querySnapshot) => {
+  mealsCollection.where("category", "==", category.toLowerCase()).get().then((querySnapshot) => 
+  {
   // Get an array of meal documents
   const meals = querySnapshot.docs;
 
@@ -29,7 +32,7 @@ function displayRandomMeal(category, element)
   }
 
 function displayMeals() 
-  {
+{
   const mealList = document.getElementById("mealList");
 
   // Add event listener to the form submission
@@ -112,5 +115,10 @@ function displayMeals()
   }
   });
   });
-  }
-window.addEventListener("load", displayMeals, displayRandomMeal);
+}
+window.addEventListener("load", () => {
+  displayMeals();
+  setTimeout(() => {
+    randomMealButton.click();
+  }, 100); // 1000 milliseconds = 1 second
+});
