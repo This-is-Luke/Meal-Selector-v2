@@ -3,8 +3,8 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    height: 50px; /* adjust height as needed */
-    z-index: 1; /* make sure the header appears above other elements on the page */
+    height: 50px; 
+    z-index: 1; 
     display: flex;
     
   }
@@ -133,22 +133,28 @@ form {
     margin: 10px 0;
     padding: 10px;
     list-style: none;
-    position: relative; /* set position to relative for the li element */
+    position: relative; 
   }
   
   ul {
     padding: 0;
     margin: 40px;
     list-style: none;
-    max-height: 200px; /* set the maximum height of the list to 200 pixels */
-    overflow-y: auto; /* enable vertical scrolling */
+    max-height: 200px; 
+    overflow-y: auto; 
   }
 
   button.remove-button {
-    position: right; /* set position to absolute for the button element */
-    top: 0; /* move the button to the top of the list item */
-    right: 0; /* move the button to the right of the list item */
-    background-color: rgba(255, 0, 0, 0.45); /* set a background color for the button */
-    color: white; /* set a text color for the button */
+    position: right; 
+    top: 0; 
+    right: 0; 
+    background-color: rgba(255, 0, 0, 0.45); 
+    color: white; 
     margin-left: 20px;
+  }
+
+footer p{
+    color: white;
+    margin: 20px;
+    padding-bottom: 20px;
   }
