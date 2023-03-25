@@ -17,9 +17,13 @@
 </header>
 
 <body>
-    <div id="topSection" type="text">
+    <div id="topButtons">
         <button id="randomMeal">Randomise Meals</button>
-        <div id="randomMealSection">
+        <button id="openModalBtn">Add Meal</button>
+    </div>
+    
+    <div id="topSection" type="text">
+            <div id="randomMealSection">
             <h2 id="textBreakfast">Breakfast</h2>
             <div id="breakfastOption"></div>
             <h2 id="textLunch">Lunch</h2>
@@ -29,26 +33,32 @@
         </div>
     </div>
 
-    <form id="intakeForm">
-        <label for="mealName">Meal Name</label>
-        <input type="text" id="mealName" name="mealName" required>
-        <label for="mealIngredients">Meal Ingredients</label>
-        <textarea id="mealIngredients" name="mealIngredients" required></textarea>
-        <label for="mealRecipe">Meal Recipe</label>
-        <textarea id="mealRecipe" name="mealRecipe" required></textarea>
-        <label for="mealCategory">Meal Category</label>
-        <select id="mealCategory" name="mealCategory" required>
-        <option id="mealCatagoryOption" value="">Select a category</option>
-        <option value="breakfast">breakfast</option>
-        <option value="lunch">lunch</option>
-        <option value="dinner">dinner</option>
-        </select>
-        <div id="mealSubmitButtonDiv">
-        <button id="submitFormBtn" type="submit">Add Meal</button>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <form id="intakeForm">
+            <label for="mealName">Meal Name</label>
+            <input type="text" id="mealName" name="mealName" required>
+            <label for="mealIngredients">Meal Ingredients</label>
+            <textarea id="mealIngredients" name="mealIngredients" required></textarea>
+            <label for="mealRecipe">Meal Recipe</label>
+            <textarea id="mealRecipe" name="mealRecipe" required></textarea>
+            <label for="mealCategory">Meal Category</label>
+            <select id="mealCategory" name="mealCategory" required>
+            <option id="mealCatagoryOption" value="">Select a category</option>
+            <option value="breakfast">breakfast</option>
+            <option value="lunch">lunch</option>
+            <option value="dinner">dinner</option>
+            </select>
+            <div id="mealSubmitButtonDiv">
+            <button id="submitFormBtn" type="submit">Add Meal</button>
+            </div>
+          </form>
+          <ul id="mealList"></ul>
         </div>
-    </form>
+      </div>
 
-    <ul id="mealList"></ul>
+    
 
     <script>
         const firebaseConfig = 
