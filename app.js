@@ -68,7 +68,7 @@ function displayMeals() {
 
 			// Create a remove button for each list item
 			const removeButton = document.createElement("button");
-			removeButton.textContent = "X";
+			removeButton.textContent = "Delete Entry";
 			removeButton.classList.add("remove-button"); // add class to button
 			removeButton.addEventListener("click", () => {
 				// Display a confirmation dialog before deleting the item
@@ -137,10 +137,10 @@ window.onclick = function (event) {
 		modal.style.display = "none";
 	}
 };
-
+// load page will trigger the random meal button to be clicked and the list of meals to be displayed
 window.addEventListener("load", () => {
 	displayMeals();
 	setTimeout(() => {
 		randomMealButton.click();
-	}, 100); // 1000 milliseconds = 1 second
+	}, 100);
 });
