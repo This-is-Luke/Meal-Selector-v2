@@ -51,8 +51,8 @@ header {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 50px;
+    margin-bottom: 0px;
 }
 
 body {
@@ -81,9 +81,10 @@ body {
     background: rgba(0, 0, 0, 0.5);;
     display: inline;
     padding: 2em;
-    max-width: 2000px;
+    max-width: flex;
+    min-width: flex;
     border-radius: 20px;
-    margin-bottom: 10px;
+    margin: 50px;
   }
 
 #textBreakfast, #textLunch, #textDinner {
