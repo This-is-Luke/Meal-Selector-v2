@@ -26,9 +26,9 @@ function displayRandomMeal(category, element) {
 			// Display the random meal in the specified HTML element
 			const htmlElement = document.getElementById(element);
 			htmlElement.innerHTML = `
-      <h2>${randomMeal.name}</h2>
-      <p><strong>Ingredients:</strong> ${randomMeal.ingredients}</p>
-      <p><strong>Recipe:</strong> ${randomMeal.recipe}</p>`;
+      		<h2>${randomMeal.name}</h2>
+      		<p><strong>Ingredients:</strong> ${randomMeal.ingredients}</p>
+      		<p><strong>Recipe:</strong> ${randomMeal.recipe}</p>`;
 		});
 }
 
