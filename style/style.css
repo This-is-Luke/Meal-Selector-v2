@@ -45,16 +45,16 @@ body {
   li {
 	color: white;
 	margin: 1rem 0;
-	padding: 10rem;
+	padding: 1rem;
 	list-style: none;
 	position: relative;
 }
 
 ul {
 	padding: 0;
-	margin: 40rem;
+	margin: 40px;
 	list-style: none;
-	max-height: 200rem;
+	max-height: 400px;
 	overflow-y: auto;
 }
 
@@ -221,7 +221,6 @@ footer p {
 }
 
 .modal {
-	display: none;
 	position: fixed;
 	z-index: 1;
 	left: 0;
@@ -235,7 +234,7 @@ footer p {
 
 .modal-content {
 	background-color: #000000;
-	margin: 15% auto;
+	margin: auto auto;
 	padding: 20px;
 	border: 1px solid #888;
 	width: 80%;
