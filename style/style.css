@@ -1,58 +1,18 @@
 header {
-	position: left;
+	position: flex;
 	top: 0;
 	left: 0;
 	right: 0;
-	height: 50px;
-	z-index: 1;
-	display: flex;
-}
-
-.logo {
-	width: 150px;
-	height: 150px;
-	margin: 10px;
-}
-
-#textMealSelector {
-	background: none;
-	color: white;
-	display: inline;
-	padding: 1em;
-	border-radius: 20px;
-	margin-bottom: 10px;
-	margin-top: 30px;
-}
-
-#randomMeal {
-	background: rgba(255, 255, 255, 0.5);
-	padding: 2em;
-	display: flex;
-	border-radius: 20px;
-	margin: 40px;
-	margin-top: 100px;
-}
-
-#openModalBtn {
-	background: rgba(255, 255, 255, 0.5);
-	padding: 2em;
-	display: flex;
-	border-radius: 20px;
-	margin: 40px;
-	margin-top: 100px;
-}
-
-#topButtons {
+	height: 100px;
 	display: flex;
 	flex-direction: row;
-	justify-content: left;
 	align-items: center;
-	flex-direction: row;
 	margin-top: 50px;
-	margin-bottom: 0px;
 }
-
 body {
+	height: 100%;
+	font-size: 1rem;
+  	font-family: "Bison Bold", Verdana;
 	background-image: linear-gradient(
 			to bottom,
 			rgba(43, 223, 255, 0.398),
@@ -60,16 +20,13 @@ body {
 		),
 		linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)),
 		url(./media/sl_022120_28320_22\ [Converted].svg);
-	background-repeat: repeat-y;
-	background-size: stretch;
-	background-position: center;
-	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+	background-size: auto;
+	background-blend-mode: darken;
 }
 
 #topSection {
-	font-size: 1.3rem;
 	color: white;
-	text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+	text-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.8);
 	height: fit-content;
 	width: 100%;
 	display: flex;
@@ -78,15 +35,113 @@ body {
 	flex-direction: column;
 }
 
-#randomMealSection {
-	background: rgba(0, 0, 0, 0.5);
-  display: inline;
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 1rem;
+}
+
+  li {
+	color: white;
+	margin: 1rem 0;
+	padding: 10rem;
+	list-style: none;
+	position: relative;
+}
+
+ul {
+	padding: 0;
+	margin: 40rem;
+	list-style: none;
+	max-height: 200rem;
+	overflow-y: auto;
+}
+
+.logo {
+	width: 10rem;
+	height: auto;
+	margin: 2rem;
+	display: flex;
+	object-fit: contain;	
+}
+
+#textMealSelector {
+	background: none;
+	font-family: "Helvetica", Helvetica;
+	color: white;
+	margin-left: 1rem;
+	border-radius: 2rem;
+}
+
+#randomMeal {
+	background: rgba(255, 255, 255, 0.5);
 	padding: 2em;
-  float: left;
+	display: flex;
+	font-family: "Helvetica", Helvetica;
+	border-radius: 20px;
+	margin: 40px;
+	color: #ffffff;
+	
+}
+
+#openModalBtn {
+	background: rgba(255, 255, 255, 0.5);
+	padding: 2em;
+	font-family: "Helvetica", Helvetica;
+	display: flex;
+	border-radius: 20px;
+	margin: 40px;
+	color: #ffffff;
+}
+
+#topButtons {
+	display: flex;
+	flex-direction: row;
+	justify-content: left;
+	align-items: center;
+	flex-direction: row;
+	height: 100px;
+	margin-top: 35px;
+	margin-bottom: 0px;
+	margin-left: 10px;
+	flex-shrink: 0;	
+}
+
+
+
+#randomMealSection {
+	background: rgba(0, 0, 0, 0);
+	font-family: "Helvetica", Helvetica;
+  	display: inline;
+	padding: 0.5vh;
+	padding-left: 1vh;
+  	float: left;
 	max-width: flex;
 	min-width: flex;
 	border-radius: 20px;
-	margin: 50px;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+#randomMealSection h3 {
+	margin: 8px;
+	text-decoration: underline;
+	font-family: "Helvetica", Helvetica;
+	
+}
+
+#randomMealSection h2 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+	font-family: "Helvetica", Helvetica;
+	
+}
+
+#randomMealSection p {
+	margin-top: auto;
+	margin-bottom: 10px;
+	
 }
 
 #textBreakfast,
@@ -107,7 +162,6 @@ form {
 }
 
 label {
-	font-size: 1.2rem;
 	color: white;
 	margin: 1rem 0 0.5rem;
 }
@@ -115,7 +169,6 @@ label {
 input,
 textarea,
 select {
-	font-size: 1.2rem;
 	padding: 0.5rem;
 	margin: 0.5rem 0;
 	border: 1px solid #ccc;
@@ -141,7 +194,6 @@ select {
 #submitFormBtn {
 	background-color: #2196f3;
 	color: #fff;
-	font-size: 1.2rem;
 	padding: 0.5rem 1.5rem;
 	border: none;
 	border-radius: 4px;
@@ -151,22 +203,6 @@ select {
 
 #submitFormBtn:hover {
 	background-color: #0d47a1;
-}
-
-li {
-	color: white;
-	margin: 10px 0;
-	padding: 10px;
-	list-style: none;
-	position: relative;
-}
-
-ul {
-	padding: 0;
-	margin: 40px;
-	list-style: none;
-	max-height: 200px;
-	overflow-y: auto;
 }
 
 button.remove-button {
@@ -184,7 +220,6 @@ footer p {
 	padding-bottom: 20px;
 }
 
-/* Style the modal box */
 .modal {
 	display: none;
 	position: fixed;
@@ -198,7 +233,6 @@ footer p {
 	background-color: rgba(0, 0, 0, 0.4);
 }
 
-/* Style the modal content */
 .modal-content {
 	background-color: #000000;
 	margin: 15% auto;
@@ -207,11 +241,9 @@ footer p {
 	width: 80%;
 }
 
-/* Style the close button */
 .close {
 	color: #ff0000;
 	float: right;
-	font-size: 28px;
 	font-weight: bold;
 }
 

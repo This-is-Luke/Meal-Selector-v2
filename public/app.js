@@ -3,34 +3,46 @@ const randomMealButton = document.getElementById("randomMeal");
 function displayRandomMeal(category, element) {
 	// Get a reference to the meals collection in Firestore
 	const mealsCollection = db.collection("mealsdb");
-
+  
 	// Query Firestore for meals in the specified category
 	mealsCollection
-		.where("category", "==", category.toLowerCase())
-		.get()
-		.then((querySnapshot) => {
-			// Get an array of meal documents
-			const meals = querySnapshot.docs;
-
-			// If there are no meals in the specified category, display a message instead of a random meal
-			if (meals.length === 0) {
-				const htmlElement = document.getElementById(element);
-				htmlElement.textContent = "No meals found in this category.";
-				return;
-			}
-
-			// Select a random meal from the array
-			const randomMeal =
-				meals[Math.floor(Math.random() * meals.length)].data();
-
-			// Display the random meal in the specified HTML element
-			const htmlElement = document.getElementById(element);
-			htmlElement.innerHTML = `
-      		<h2>${randomMeal.name}</h2>
-      		<p><strong>Ingredients:</strong> ${randomMeal.ingredients}</p>
-      		<p><strong>Recipe:</strong> ${randomMeal.recipe}</p>`;
-		});
-}
+	  .where("category", "==", category.toLowerCase())
+	  .get()
+	  .then((querySnapshot) => {
+		// Get an array of meal documents
+		const meals = querySnapshot.docs;
+  
+		// If there are no meals in the specified category, display a message instead of a random meal
+		if (meals.length === 0) {
+		  const htmlElement = document.getElementById(element);
+		  htmlElement.textContent = "No meals found in this category.";
+		  return;
+		}
+  
+		// Get the current value of the element
+		const currentValue = document.getElementById(element).textContent;
+  
+		// Filter out meals that have already been displayed
+		const remainingMeals = meals.filter((meal) => meal.data().name !== currentValue);
+  
+		// If all meals have been displayed, reset the list and try again
+		if (remainingMeals.length === 0) {
+		  displayRandomMeal(category, element);
+		  return;
+		}
+  
+		// Select a random meal from the remaining meals
+		const randomMeal = remainingMeals[Math.floor(Math.random() * remainingMeals.length)].data();
+  
+		// Display the random meal in the specified HTML element
+		const htmlElement = document.getElementById(element);
+		htmlElement.innerHTML =
+		  `<h3>${randomMeal.name}</h3>
+			<p><strong>Ingredients:</strong> ${randomMeal.ingredients}</p>
+			<p><strong>Recipe:</strong> ${randomMeal.recipe}</p>`;
+	  });
+  }
+  
 
 function displayMeals() {
 	const mealList = document.getElementById("mealList");
