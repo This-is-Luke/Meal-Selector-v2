@@ -13,17 +13,10 @@ body {
 	height: 100%;
 	font-size: 1rem;
   	font-family: "Bison Bold", Verdana;
-	background-image: linear-gradient(
-			to bottom,
-			rgba(43, 223, 255, 0.398),
-			rgba(0, 0, 0, 1)
-		),
-		linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)),
-		url(./media/sl_022120_28320_22\ [Converted].svg);
 	background-size: auto;
 	background-blend-mode: darken;
 }
-
+/* test */
 #topSection {
 	color: white;
 	text-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.8);
