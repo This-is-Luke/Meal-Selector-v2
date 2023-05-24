@@ -80,11 +80,11 @@ ul {
 
 #openModalBtn {
 	background: rgba(255, 255, 255, 0.5);
-	padding: 2em;
+	padding: 1em;
 	font-family: "Helvetica", Helvetica;
 	display: flex;
-	border-radius: 20px;
-	margin: 40px;
+	border-radius: 15px;
+	margin: 20px;
 	color: #ffffff;
 }
 
@@ -94,8 +94,8 @@ ul {
 	justify-content: left;
 	align-items: center;
 	flex-direction: row;
-	height: 100px;
-	margin-top: 35px;
+	height: 50px;
+	margin-top: 15px;
 	margin-bottom: 0px;
 	margin-left: 10px;
 	flex-shrink: 0;	
